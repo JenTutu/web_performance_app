@@ -374,6 +374,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  bcrypt (~> 3.1.9)
   bootstrap-sass!
   bootstrap-sass-extras
   bundler
