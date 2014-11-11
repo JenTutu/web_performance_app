@@ -1,0 +1,20 @@
+<!-- this part should be part of a partial that displays once the url is given -->
+
+<div class="container">
+    <%= "Results for  #{@url.given_url} " %>
+
+    <table class="table">
+      <tr>
+        <td>Status</td>
+        <td>Page Load Time</td>
+        <td>Page Size</td>
+        <td>Number of Links <small>(*does not include buttons)</small></td>
+      </tr>
+      <tr>
+        <td><%= @status %></td>
+        <td><%= "#{@stop - @start} seconds"%></td>
+        <td>something</td>
+        <td><%= "#{@links}"%></td>
+      </tr>
+    </table>
+</div>

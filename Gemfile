@@ -48,6 +48,8 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise', github: 'plataformatec/devise'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
+gem 'nokogiri'
+
 
 group :development, :test do
   gem 'dotenv-rails'
