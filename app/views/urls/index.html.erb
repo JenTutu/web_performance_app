@@ -3,12 +3,12 @@
 
 <div class="container">
 
-    <table class="table table-condensed pretty" id="table-style" data-url="data1.json" data-height="400" data-row-style="rowStyle">
+    <table class="table table-condensed pretty wow fadeIn" id="table-style" data-url="data1.json" data-height="400" data-row-style="rowStyle">
       <thead>
         <tr>
           <th>Url</th>
           <th>Status</th>
-          <th><%= sortable "page_load_time" %></th>
+          <th><%= sortable "page_load_time", "Page Load Time (s)" %></th>
           <th><%= sortable "num_of_links", "*Number of Links" %></th>
           <th><%= sortable "updated_at", "Last Checked" %></th>
         </tr>
