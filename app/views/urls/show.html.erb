@@ -1,24 +1,23 @@
-<!-- this part should be part of a partial that displays once the url is given -->
 
 <div class="container">
-    <%= "Results for  #{@url.given_url} " %>
+  <%= "Results for  #{@url.given_url} " %>
 
-    <table class="table">
-      <tr>
-        <td>Status</td>
-        <td>Page Load Time (s)</td>
-        <td>*Number of Links</td>
-        <td>Last Checked</td>
-      </tr>
-      <tr>
-        <td><%= @url.status %></td>
-        <td><%= @url.page_load_time%></td>
-        <td><%= @url.num_of_links %></td>
-        <td><%= @url.updated_at %></td>
-      </tr>
-    </table>
+  <table class="table">
+    <tr>
+      <td>Status</td>
+      <td>Page Load Time (s)</td>
+      <td>*Number of Links</td>
+      <td>Last Checked</td>
+    </tr>
+    <tr>
+      <td><%= @url.status %></td>
+      <td><%= @url.page_load_time%></td>
+      <td><%= @url.num_of_links %></td>
+      <td><%= @url.updated_at %></td>
+    </tr>
+  </table>
 
-    <footer>
-      <small>(*does not include buttons)</small>
-    </footer> 
+  <footer>
+    <small>(*does not include buttons)</small>
+  </footer> 
 </div>
