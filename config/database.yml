@@ -81,5 +81,4 @@ test:
 production:
   <<: *default
   database: web_performance_app_production
-  username: web_performance_app
   password: <%= ENV['WEB_PERFORMANCE_APP_DATABASE_PASSWORD'] %>
