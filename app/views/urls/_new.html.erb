@@ -4,7 +4,7 @@
     <h1>Submit a URL ...</h1>
     <%=form_for(@url) do |t| %>
       <div class="form-group">
-        <%= t.text_field :given_url, :placeholder => "http://google.com", :type => "url", class: "form-control" %> 
+        <%= t.text_field :given_url, :placeholder => "http://google.com", :type => "url", :required => "true", class: "form-control" %> 
       </div>
       <%= t.submit "Boom!", class: "btn btn-success" %>
     <% end %>

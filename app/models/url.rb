@@ -26,4 +26,5 @@ class Url < ActiveRecord::Base
     source = open(self.given_url, &:readlines)
     self.num_of_links = Nokogiri::HTML(open(self.given_url)).xpath('//a').collect {|a| a.attr('href')}.length      
   end
+
 end 

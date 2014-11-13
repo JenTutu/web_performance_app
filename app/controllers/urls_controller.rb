@@ -10,13 +10,21 @@ helper_method :sort_column, :sort_direction #to access these methods in the view
   end
 
   def create
+   # @url = Url.where(given_url: params[:given_url]).first
+   # if @url
+   #   @url.update_attribute(:page_load_time, @url.load_time)
+   #   redirect_to @url
+   # else
       @url = Url.new(url_params)
       if @url.save
         redirect_to @url
       else
-        render 'new'
+       @url.update_attribute(:page_load_time, @url.load_time)
+       redirect_to @url
+        # render 'new'
         # @url.errors
       end     
+   # end
   end
 
   def show

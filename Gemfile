@@ -49,6 +49,7 @@ gem 'devise', github: 'plataformatec/devise'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
 gem 'nokogiri'
+gem 'rest-client'
 
 
 group :development, :test do
