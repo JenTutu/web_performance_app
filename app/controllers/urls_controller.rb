@@ -1,25 +1,38 @@
 class UrlsController < ApplicationController
-include UrlsHelper
+helper_method :sort_column, :sort_direction #to access these methods in the view
+  def index 
+    @urls = Url.order(sort_column + " " + sort_direction)
+    @url = Url.new
+  end
+
   def new
     @url = Url.new    
   end
 
   def create
-    @url = Url.create(url_params)
-    redirect_to @url
+      @url = Url.new(url_params)
+      if @url.save
+        redirect_to @url
+      else
+        render 'new'
+        # @url.errors
+      end     
   end
+
   def show
-    @url = Url.find(params[:id])
-    @start = start_time
-    @fetch = open_site(@url.given_url)
-    @stop = stop_time
-    @links = count_links(@url.given_url)
-    @status = url_status(@url.given_url)
-    # @time = load_time(@url.given_url)
+    @url = Url.find_by(id: params[:id])
   end
   
   private 
   def url_params
     params.require(:url).permit(:given_url)
+  end
+
+  def sort_column
+    Url.column_names.include?(params[:sort]) ? params[:sort] : "updated_at"
+  end
+
+  def sort_direction 
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
   end
 end

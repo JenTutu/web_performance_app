@@ -1,0 +1,29 @@
+
+<%= render partial: "urls/new" %>
+
+<div class="container">
+
+    <table class="table table-condensed pretty" id="table-style" data-url="data1.json" data-height="400" data-row-style="rowStyle">
+      <thead>
+        <tr>
+          <th>Url</th>
+          <th>Status</th>
+          <th><%= sortable "page_load_time" %></th>
+          <th><%= sortable "num_of_links", "Number of Links" %></th>
+          <th><%= sortable "updated_at", "Last Checked" %></th>
+        </tr>
+      </thead>
+      <% @urls.each do |url| %>
+        <tr>
+          <td><%= link_to url.given_url, url_path(url) %></td>
+          <td><%= url.status %></td>
+          <td><%= url.page_load_time %></td>
+          <td><%= url.num_of_links %></td>
+          <td><%= url.updated_at %></td>
+        </tr>
+      <%end%> 
+    </table>
+    <footer>
+      <small>(*does not include buttons)</small>
+    </footer> 
+</div>

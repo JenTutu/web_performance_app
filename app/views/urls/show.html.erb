@@ -6,15 +6,19 @@
     <table class="table">
       <tr>
         <td>Status</td>
-        <td>Page Load Time</td>
-        <td>Page Size</td>
-        <td>Number of Links <small>(*does not include buttons)</small></td>
+        <td>Page Load Time (s)</td>
+        <td>*Number of Links</td>
+        <td>Last Checked</td>
       </tr>
       <tr>
-        <td><%= @status %></td>
-        <td><%= "#{@stop - @start} seconds"%></td>
-        <td>something</td>
-        <td><%= "#{@links}"%></td>
+        <td><%= @url.status %></td>
+        <td><%= @url.page_load_time%></td>
+        <td><%= @url.num_of_links %></td>
+        <td><%= @url.updated_at %></td>
       </tr>
     </table>
+
+    <footer>
+      <small>(*does not include buttons)</small>
+    </footer> 
 </div>
